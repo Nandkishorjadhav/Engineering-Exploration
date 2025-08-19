@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 /* === NAVBAR === */
 .navbar {
     background: rgba(0, 0, 0, 0.9);
-    padding: 12px 0;
+    padding: 9px 0;
     position: fixed;
     top: 0;
     left: 0;

@@ -1,0 +1,17 @@
+.logo {
+    top: 11px;
+    left: -170px;
+    position: relative;
+    width: 568px;
+    
+    animation: GFG 5s infinite linear;
+}
+
+
+@keyframes GFG {
+    100% {transform: rotate(360deg);}
+  }
+
+
+
+  

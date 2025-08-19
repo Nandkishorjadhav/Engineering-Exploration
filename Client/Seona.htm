@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="{{ current_language }}" ng-app="app">
+<head>
+  <meta charset="utf-8" />
+  <meta name="fragment" content="!"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, minimum-scale=.5, user-scalable=yes" />
+  <meta name="csrf-token" content="[_csrf_token_]" />
+  <title ng-bind-template="{{ meta.title != '' ?  meta.title +' - ' : '' }} Rattibha"> Rattibha </title>
+      <meta name="google-site-verification" content="vfd9jVwdDiG6wWwocK25n6yuVwKCIkmD63V5hrw7KJE" />
+        <link rel="stylesheet" href="/rattibha.css?v=21.3" >
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/rattibha_180X180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/rattibha_32X32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/rattibha_192X192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/rattibha-favicon.png">
+  <link rel="mask-icon" href="/img/rattibha-favicon.png" color="{{ mode == null ? '#ffffff' : mode == 'lightmode' ? '#ffffff' : '#15202b'  }}">
+
+  <meta  name="theme-color" content="#15202b" media="(prefers-color-scheme: dark)">
+  <meta name="msapplication-navbutton-color"  content="#15202b">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#15202b">
+
+  <style>
+ .post-content-body div p div {opacity: .2 }.rattibha-intro {margin: 0 auto;text-align: center;}.spinner {margin: 0 auto;width: 70px;text-align: center;}.spinner>div {width: 10px;height: 10px;background-color: #333;border-radius: 100%;display: inline-block;-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;animation: sk-bouncedelay 1.4s infinite ease-in-out both;}html .lightmode .spinner>div {background-color: #333;}html .darkmode .spinner>div {background-color: #fff;}.spinner .bounce1 {-webkit-animation-delay: -0.32s;animation-delay: -0.32s;}.spinner .bounce2 {-webkit-animation-delay: -0.16s;animation-delay: -0.16s;}@-webkit-keyframes sk-bouncedelay {0%, 80%, 100% {-webkit-transform: scale(0) }40% {-webkit-transform: scale(1.0) }}@keyframes  sk-bouncedelay {0%, 80%, 100% {-webkit-transform: scale(0);transform: scale(0);}40% {-webkit-transform: scale(1.0);transform: scale(1.0);}}@media  only screen and (min-device-width : 320px) and (max-device-width : 480px) {.spinner>div {width: 7px;height: 7px;}}
+
+  </style>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Josefin+Sans&display=swap" rel="stylesheet" rel="preload" as="style">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7FJ92KCW2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7FJ92KCW2');
+
+    
+  </script>
+
+  <script>
+    var account = {"account":{"id":5,"account_user_id":"1131528376538337280","username":"rattibha","name":"Rattibha \u0631\u062a\u0628\u0647\u0627","picture":"https:\/\/pbs.twimg.com\/profile_images\/1496416957960232960\/w_2sR1kS_normal.jpg","followers":422933,"description":"\u0627\u0643\u062a\u0628 \u0631\u062f\u0627\u064b \u0641\u064a\u0647 \u062d\u0633\u0627\u0628\u0646\u0627 \u0648\u0643\u0644\u0645\u0629 \u0631\u062a\u0628\n\nMention @rattibha on a thread to unroll it.\nlogin to Rattibha to view all your unrolled threads. Serving all languages, ALL FREE"},"error_msg":null,"alert_msg":null,"languages":[{"id":7,"code":"ar","name":"Arabic","native_name":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629","status":true,"created_at":null,"updated_at":"2020-09-19 02:07:15","dm_text":null,"dm_description":null,"dm_status":true},{"id":30,"code":"zh","name":"Chinese","native_name":"\u4e2d\u6587 (Zh\u014dngw\u00e9n), \u6c49\u8bed, \u6f22\u8a9e","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:08","dm_text":null,"dm_description":null,"dm_status":false},{"id":40,"code":"en","name":"English","native_name":"English","status":true,"created_at":null,"updated_at":"2020-09-19 02:07:14","dm_text":null,"dm_description":null,"dm_status":true},{"id":47,"code":"fr","name":"French","native_name":"fran\u00e7ais, langue fran\u00e7aise","status":true,"created_at":null,"updated_at":"2021-02-06 17:44:20","dm_text":null,"dm_description":null,"dm_status":false},{"id":51,"code":"de","name":"German","native_name":"Deutsch","status":true,"created_at":null,"updated_at":"2021-02-11 07:42:59","dm_text":null,"dm_description":null,"dm_status":false},{"id":57,"code":"he","name":"Hebrew (modern)","native_name":"\u05e2\u05d1\u05e8\u05d9\u05ea","status":true,"created_at":null,"updated_at":"2021-02-11 06:29:41","dm_text":null,"dm_description":null,"dm_status":false},{"id":59,"code":"hi","name":"Hindi","native_name":"\u0939\u093f\u0928\u094d\u0926\u0940, \u0939\u093f\u0902\u0926\u0940","status":true,"created_at":null,"updated_at":"2021-02-06 17:43:36","dm_text":null,"dm_description":null,"dm_status":false},{"id":63,"code":"id","name":"Indonesian","native_name":"Bahasa Indonesia","status":true,"created_at":null,"updated_at":"2022-12-26 14:53:25","dm_text":null,"dm_description":null,"dm_status":false},{"id":70,"code":"it","name":"Italian","native_name":"Italiano","status":true,"created_at":null,"updated_at":"2021-02-06 17:44:42","dm_text":null,"dm_description":null,"dm_status":false},{"id":72,"code":"ja","name":"Japanese","native_name":"\u65e5\u672c\u8a9e (\u306b\u307b\u3093\u3054\uff0f\u306b\u3063\u307d\u3093\u3054)","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:17","dm_text":null,"dm_description":null,"dm_status":false},{"id":85,"code":"ko","name":"Korean","native_name":"\ud55c\uad6d\uc5b4 (\u97d3\u570b\u8a9e), \uc870\uc120\ub9d0 (\u671d\u9bae\u8a9e)","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:13","dm_text":null,"dm_description":null,"dm_status":false},{"id":100,"code":"ms","name":"Malay","native_name":"bahasa Melayu, \u0628\u0647\u0627\u0633 \u0645\u0644\u0627\u064a\u0648\u200e","status":true,"created_at":null,"updated_at":"2021-02-11 07:58:38","dm_text":null,"dm_description":null,"dm_status":false},{"id":101,"code":"ml","name":"Malayalam","native_name":"\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02","status":true,"created_at":null,"updated_at":"2021-02-11 07:58:35","dm_text":null,"dm_description":null,"dm_status":false},{"id":104,"code":"mr","name":"Marathi (Mar\u0101\u1e6dh\u012b)","native_name":"\u092e\u0930\u093e\u0920\u0940","status":true,"created_at":null,"updated_at":"2021-02-11 07:58:30","dm_text":null,"dm_description":null,"dm_status":false},{"id":123,"code":"pa","name":"Panjabi, Punjabi","native_name":"\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40, \u067e\u0646\u062c\u0627\u0628\u06cc\u200e","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:25","dm_text":null,"dm_description":null,"dm_status":false},{"id":125,"code":"fa","name":"Persian","native_name":"\u0641\u0627\u0631\u0633\u06cc","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:41","dm_text":null,"dm_description":null,"dm_status":false},{"id":126,"code":"pl","name":"Polish","native_name":"polski","status":true,"created_at":null,"updated_at":"2021-02-11 07:38:38","dm_text":null,"dm_description":null,"dm_status":false},{"id":127,"code":"ps","name":"Pashto, Pushto","native_name":"\u067e\u069a\u062a\u0648","status":true,"created_at":null,"updated_at":"2021-02-06 17:45:29","dm_text":null,"dm_description":null,"dm_status":false},{"id":128,"code":"pt","name":"Portuguese","native_name":"Portugu\u00eas","status":true,"created_at":null,"updated_at":"2021-02-06 17:44:47","dm_text":null,"dm_description":null,"dm_status":false},{"id":148,"code":"es","name":"Spanish; Castilian","native_name":"espa\u00f1ol, castellano","status":true,"created_at":null,"updated_at":"2021-02-06 17:44:25","dm_text":null,"dm_description":null,"dm_status":false},{"id":153,"code":"ta","name":"Tamil","native_name":"\u0ba4\u0bae\u0bbf\u0bb4\u0bcd","status":true,"created_at":null,"updated_at":"2021-02-06 17:43:47","dm_text":null,"dm_description":null,"dm_status":false},{"id":163,"code":"tr","name":"Turkish","native_name":"T\u00fcrk\u00e7e","status":true,"created_at":null,"updated_at":"2021-02-06 17:43:52","dm_text":null,"dm_description":null,"dm_status":false},{"id":170,"code":"ur","name":"Urdu","native_name":"\u0627\u0631\u062f\u0648","status":true,"created_at":null,"updated_at":"2021-02-06 17:43:29","dm_text":null,"dm_description":null,"dm_status":false}],"mode":"lightmode","language":"en","font_size":"minus","logged_in_user":{"user":false}};
+    var site = "https://rattibha.com";
+    var threadnotfound = 'The thread you are looking for is not found.';
+    var media_notfound = 'The thread you are looking for is not found.';
+    var autostart = true;
+    var b_x_ids = []; //$ids
+    var titles = {"home":"The best Threads and photos in one place!","thread":"Thread","recent":"Recently created threads","hashtag":"hashtag","most_read":"Most viewed threads","search":"Search best  threads","authors":"Best Authors, you may want to follow","most_requested":"Most requested threads by users","categories":"Categories of Top threads"}
+    var unknown_error = 'Sorry something went wrong, please try again after sometime.';
+    var dontsendlog = true;
+    var default_title = window.location.path + " - Rattibha";
+    var check_this_out = 'I find this interesting. Take a look at it.';
+    var env = 'production';
+    var google_tag_id = 'G-H7FJ92KCW2';
+    var ad = {"id":1,"name":"Contact us for ads","title":"Unlock Your Brand's Potential: Advertise with Rattibha.com Today!","description":"Ready to take your brand to the next level? Seize the spotlight with Rattibha.com! Our platform offers premium advertising opportunities to help you shine in front of a vibrant and diverse audience.","image":null,"link":"mailto:support@rattibha.com","status":1,"language":"en","created_at":null,"updated_at":"2024-04-28 15:04:02"};
+  </script>
+
+ 
+
+</head>
+<body class="{{ font_size }} lightmode minus " ng-class="">
+  <div class="wrap ">
+    <header role="banner " class="{{ language == 'ar' ? 'rtl' : 'ltr' }} notranslate " ng-cloak>
+      <span ng-controller="header">
+      </span>
+      <div class="logo-wrap"> 
+        <div class="box-shadow menu">
+          <div class="menu-row link">
+            <!---<a href="/" class="d-none d-md-block">
+              <div class="site-logo ">
+              <span afkl-lazy-image-options="{'offset': 0, 'imgAttrs': [{'class': 'sitelogo'}], }"
+              afkl-lazy-image="/img/rattibha.png" class=""> </span>
+               <img src="/img/rattibha.png" class="sitelogo">
+              </div>
+            </a> -->
+            <div class="d-none d-md-block mr-2 link">
+              <a class="btn right-head " ng-class="p_type == 16 ? 'font-weight-bold' : ''" href="/">
+                Popular Threads
+              </a>
+            </div>
+            <div class="d-none d-md-block mr-2 link">
+              <a class="btn right-head " ng-class="p_type == 15 ? 'font-weight-bold' : ''" href="/categories">
+                Categories</a>
+            </div>
+            <div class="d-none d-md-block mr-2 link">
+              <a class="btn right-head " ng-class="p_type == 15 ? 'font-weight-bold' : ''" href="/authors">
+                Authors</a>
+            </div>
+            <div class="d-block d-md-none col col-no-padding notranslate">
+              <div class="mobile-header " ng-controller="modechanger" title="Goto Homepage">
+                <div class=" btn" title="Goto Homepage">                
+                    <a class="fas fa-home " href="\">
+                    </a>
+                </div>
+                <!-- if(!isset($thread_page)) -->
+                <div class="dropdown btn " title="thread.change_langauge">
+                  <a title="Change Language" class="fa fa-language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">                  
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" >
+                    <div class="dropdown-item" ng-click="changeLang('ar')" target="_self">العربية</div>
+                    <div class="dropdown-item" ng-click="changeLang('en')" target="_self">English </div>
+                  </div>
+                </div>
+                <!-- endif -->
+                <div class="btn  " ng-click="changefont('-')" title="Change Font Size" >
+                <i class="font-resizer fa"> Aa</i></div>
+                
+                <div class="btn" ng-click="changmode()" title="Change Display Mode">
+                  <i class="fas fa-moon mode-changer "   ng-if="screen_mode == 'lightmode'">&nbsp;
+                  </i>
+                  <i class="fas fa-sun mode-changer "   ng-if="screen_mode == 'darkmode'">&nbsp;</i>
+                </div>
+                <a class="btn " href="/search" title="Search 𝕏 Threads">
+                  <i class="fas fa-search"></i>
+                </a>
+                <a class="btn toggle " data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="true" aria-controls="navbarMenu" title="Menu"><i class="fas fa-bars"></i></a>
+              </div>
+            </div>
+            <div class="col d-none d-md-block notranslate" ng-controller="modechanger" title="Search 𝕏 Threads">
+              <div class=" right-head ">
+                <div class="btn">
+                  <a class=" " href="/search">
+                    <i class="fas fa-search"></i>&nbsp;
+                  </a>
+                </div>
+                <!----if(!isset($thread_page)) -->
+                <div class="dropdown btn">
+                  <a title="Change Language" class=" " id="dropdown04" data-toggle="dropdown">
+                    <span class="fa fa-language"></span>
+                  </a>
+                  <div class="dropdown-menu " aria-labelledby="dropdown04">
+                    <div class="dropdown-item" ng-click="changeLang('ar')" target="_self">العربية</div>
+                    <div class="dropdown-item" ng-click="changeLang('en')" target="_self">English</div>
+                  </div>
+                </div>
+                <!-- endif -->
+
+                <div class="btn font-resizer fa"  ng-click="changefont('-')" title="Change Font Size">Aa</div>
+
+               
+
+                <div class="btn" ng-click="changmode()" title="Change Display Mode">
+                  <i class="fas fa-moon mode-changer "  ng-if="screen_mode == 'lightmode'">&nbsp;</i>
+                  <i class="fas fa-sun mode-changer "  ng-if="screen_mode == 'darkmode'"></i>
+                </div>
+
+                <div class="btn">
+                  <div ng-click="loginTwt()" ng-if="logged_user == false" class="fa fa-user" title="Login"  title="thread.login_with_twitter_account">
+                  </div>
+
+                  <div class="dropdown " ng-show="logged_user != false">
+                    <a title="Profile" class="logged-in-user" id="dropdown06" data-toggle="dropdown">
+                      <img class="" ng-src="{{ get_dp_large(logged_user.picture) }}">
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown06">
+                      <a class="dropdown-item" href="/dashboard">Profile</a>
+                      <a class="dropdown-item" href="/twitter/logout" target="_self">Logout</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-light {{ language == 'ar' ? 'rtl' : 'ltr' }} d-block d-md-none box-shadow">
+          <div class="container">
+
+            <div class="navbar-collapse collapse border-bottom" id="navbarMenu" style="">
+              <div class="d-block d-md-none " data-toggle="collapse" href="#navbarMenu"><i class="far fa-window-close close-nav"></i></div>
+              <ul class="navbar-nav mx-auto mb-4">
+                <li class="nav-item d-md-none" ng-show="logged_user == false">
+                  <div ng-click="loginTwt()" class=" fs1 " title="Login"> <i class="fa fa-user"></i>
+                    My Account
+                  </div>
+                </li>
+
+                <li class="nav-item d-md-none" ng-show="logged_user != false">
+                  <a class="logged-in-user" href="/dashboard">
+                    <img class="" ng-src="{{ get_dp_large(logged_user.picture) }}">
+                    {{ logged_user.name }}
+                  </a>
+                </li>
+
+                <li class="nav-item d-md-none" ng-show="logged_user != false">
+                  <a class="" href="/dashboard"> <i class="fas fa-user-tag"></i>My Requests</a>
+                </li>
+
+                <!-- <li class="nav-item d-md-none">
+                  <a class="" href="/recent-twitter-threads"> <i class="fas fa-newspaper"></i>Recent Threads</a>
+                </li> -->
+
+
+                <li class="nav-item" title="Popular Threads">
+                  <a class="" href="/" ng-class="p_type == 16 ? 'font-weight-bold' : ''"> <i class="fab fa-readme"></i>Popular Threads</a>&nbsp;
+                </li>
+
+                <li class="nav-item"  title="Categories">
+                  <a class="" href="/categories" ng-class="p_type == 14 ? 'font-weight-bold' : ''"> <i class="fas fa-list"></i>Categories</a>&nbsp;
+
+                </li>
+
+                <li class="nav-item" title="Authors">
+                  <a class="" href="/authors" ng-class="p_type == 14 ? 'font-weight-bold' : ''"> <i class="fas fa-users"></i>Authors</a>&nbsp;
+
+                </li>
+
+
+                <li class="nav-item d-md-none" ng-if="logged_user != false" title="Logout">
+                  <a class="" target="_self" href="/twitter/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>&nbsp;
+                </li>
+
+              </ul>
+
+              <div class="f-links  mx-auto text-center mt-4  ">
+              <div class="  text-nowrap p-2 ">
+                <a href="/what-and-how" data-toggle="collapse" data-target=".navbar-collapse.show"> What is rattibha? </a> &nbsp;
+              </div>
+              <div class="  text-nowrap p-2 ">
+                <a href="/about" data-toggle="collapse" data-target=".navbar-collapse.show"> About Us </a> &nbsp;
+              </div>
+              <div class="  text-nowrap p-2 " >
+                <a href="/privacy" data-toggle="collapse" data-target=".navbar-collapse.show" >Privacy Policy </a> &nbsp;
+              </div>
+              <div class="  text-nowrap p-2 " >
+                <a href="/terms" data-toggle="collapse" data-target=".navbar-collapse.show" >Terms&amp;Conditions </a> &nbsp;
+              </div>
+
+            </div>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+
+          </header>
+
+     <div class="rattibha-intro" style="margin-top: 20%" id="intro">
+      <h4>Rattibha</h4>
+      <h6>The best Threads and photos in one place!</h6>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+
+    </div>  
+
+    
+<div id="main" class="container animated fadeIn" ng-cloak>
+
+  <section class="site-section py-sm col-sm-10 col-lg-10 col-xs-10 col-md-10 mx-auto ">
+  
+
+    <div class="" ng-view ng-show="!view_loading && !main_loading" class="{{ language == 'ar' ? 'rtl' : 'ltr' }} " keep-scroll-pos>
+      Loading.....
+    </div>
+
+    <div class="container mx-auto entries col-md-12 col-lg-8" ng-if="!view_loading && !loadmore && !main_loading && show_sidebar" >
+
+    <div > <div class=" sidebar-box {{ language == 'ar' ? 'rtl' : 'ltr' }}  blog-entries " ng-show="suggest_v2">
+
+  <div class="border-top pt-4 border-bottom pb-4" ng-if="related.length > 0 ">
+    <div class="d-flex justify-content-between mb-4 mt-2">
+      <h3 class=" ">Read more from  </h3>
+      
+    </div>
+    <div class="row welcome mt-2 ">
+      <div class=" mb-3 mb-3  feed1" ng-repeat="(k, th) in related   | filter:skipReaded | limitTo:2 ">
+        <div ng-if="(k!=0 && (k%7) == 0) || k == 2" width="100%" style="width: 100%;">
+    <div google-ad1="" class="googlead1" style="margin-top: 20px;margin-bottom: 20px;"></div>   
+</div>
+
+<div ng-if="(k!=0 && (k%7) == 0) || k == 0" width="100%" style="width: 100%;">
+    <div custom-ad="" class="googlead1" style="margin-bottom: 20px;"></div>   
+</div>
+
+<div class="post-entry-horzontal">
+  <div>
+<a href="/download/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 1">
+
+
+<span class="text">
+<span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'photocustom img-fluid img-fluid1'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.download != null ? th.download.picture_url : '/storage/meta_images/'+th.thread_id+'_2.jpg' }}" class=""> </span>
+
+</span>
+
+</a>
+
+<a href="/thread/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 0">
+
+
+<div class="image " ng-if="th.thread.m != null && th.thread.t.sens != 1" data-animate-effect="fadeIn"
+    afkl-lazy-image-options="{'offset': 400, background: true, 'imgAttrs': [{'class': 'fadein-special box-shadow-img'}, {'onerror' : 'this.style.display=\'none\''}]}"
+    afkl-lazy-image="{{ th.thread.m.picture_url }}" > </div>
+    <span class="text">
+
+      <div class="body"  ng-bind-html="secure_cardtext(th.thread.t.info.text)"></div>
+ 
+      <div class="post-meta ">
+        <div class="post-meta d-flex">
+          
+          <div class="photo profile-pic-holder">
+            <span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'fade-sp user-picture'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.thread.u.picture }}" class=""> </span>
+          </div>
+          <div class="meta">
+            <span class="notranslate bold" ng-bind-html="parse_emoji_img(th.thread.u.name)">
+
+            </span>
+            <div class="  inline " 
+              ><!--<span class="" title="{{ th.thread.t.added }}" ng-bind="toDate(th.thread.t.added, th.thread.t.language)"></span> --> <span class="" ng-bind-html="toString('tweets', current_language, th.thread.tweets_count)"> </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </span>
+
+</a>
+
+<div class="nn">
+<a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in th.thread.categories | limitTo:4" ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null"> </a>
+</div>
+</div>
+
+</div>      </div>
+    </div>
+
+    <div class="" >
+        <a class="  btn btn-primary rounded" href="/{{ related_user.username }}">
+          Read all <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+  </div>
+
+  <div ng-show="v2related.length > 0" class="pt-4 border-bottom pb-4" style="width:100%">
+
+    <div class="d-flex justify-content-between mt-4 mb-4">
+      <h3 class=" ">Related Threads</h3>
+    </div>
+    <div class="row welcome mt-2">
+
+      <div class=" mb-3 mb-3 feed1" ng-repeat="(k, th) in v2related | filter:skipReaded  | limitTo:5 ">
+        <div ng-if="(k!=0 && (k%7) == 0) || k == 2" width="100%" style="width: 100%;">
+    <div google-ad1="" class="googlead1" style="margin-top: 20px;margin-bottom: 20px;"></div>   
+</div>
+
+<div ng-if="(k!=0 && (k%7) == 0) || k == 0" width="100%" style="width: 100%;">
+    <div custom-ad="" class="googlead1" style="margin-bottom: 20px;"></div>   
+</div>
+
+<div class="post-entry-horzontal">
+  <div>
+<a href="/download/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 1">
+
+
+<span class="text">
+<span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'photocustom img-fluid img-fluid1'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.download != null ? th.download.picture_url : '/storage/meta_images/'+th.thread_id+'_2.jpg' }}" class=""> </span>
+
+</span>
+
+</a>
+
+<a href="/thread/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 0">
+
+
+<div class="image " ng-if="th.thread.m != null && th.thread.t.sens != 1" data-animate-effect="fadeIn"
+    afkl-lazy-image-options="{'offset': 400, background: true, 'imgAttrs': [{'class': 'fadein-special box-shadow-img'}, {'onerror' : 'this.style.display=\'none\''}]}"
+    afkl-lazy-image="{{ th.thread.m.picture_url }}" > </div>
+    <span class="text">
+
+      <div class="body"  ng-bind-html="secure_cardtext(th.thread.t.info.text)"></div>
+ 
+      <div class="post-meta ">
+        <div class="post-meta d-flex">
+          
+          <div class="photo profile-pic-holder">
+            <span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'fade-sp user-picture'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.thread.u.picture }}" class=""> </span>
+          </div>
+          <div class="meta">
+            <span class="notranslate bold" ng-bind-html="parse_emoji_img(th.thread.u.name)">
+
+            </span>
+            <div class="  inline " 
+              ><!--<span class="" title="{{ th.thread.t.added }}" ng-bind="toDate(th.thread.t.added, th.thread.t.language)"></span> --> <span class="" ng-bind-html="toString('tweets', current_language, th.thread.tweets_count)"> </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </span>
+
+</a>
+
+<div class="nn">
+<a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in th.thread.categories | limitTo:4" ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null"> </a>
+</div>
+</div>
+
+</div>      </div>     
+
+    </div>
+  </div>
+
+
+  <div ng-if="most_readed_day.length > 0" class=" pt-4 border-bottom pb-4">
+      <div class="d-flex justify-content-between mb-4 mt-2">
+        <h3 class=" ">Most Read</h3>
+        
+      </div>
+      <div class="row welcome mt-2 ">
+        <div class=" mb-3 mb-3 feed1" ng-repeat="(k, th) in most_readed_day   | limitTo:5">
+          <div ng-if="(k!=0 && (k%7) == 0) || k == 2" width="100%" style="width: 100%;">
+    <div google-ad1="" class="googlead1" style="margin-top: 20px;margin-bottom: 20px;"></div>   
+</div>
+
+<div ng-if="(k!=0 && (k%7) == 0) || k == 0" width="100%" style="width: 100%;">
+    <div custom-ad="" class="googlead1" style="margin-bottom: 20px;"></div>   
+</div>
+
+<div class="post-entry-horzontal">
+  <div>
+<a href="/download/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 1">
+
+
+<span class="text">
+<span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'photocustom img-fluid img-fluid1'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.download != null ? th.download.picture_url : '/storage/meta_images/'+th.thread_id+'_2.jpg' }}" class=""> </span>
+
+</span>
+
+</a>
+
+<a href="/thread/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 0">
+
+
+<div class="image " ng-if="th.thread.m != null && th.thread.t.sens != 1" data-animate-effect="fadeIn"
+    afkl-lazy-image-options="{'offset': 400, background: true, 'imgAttrs': [{'class': 'fadein-special box-shadow-img'}, {'onerror' : 'this.style.display=\'none\''}]}"
+    afkl-lazy-image="{{ th.thread.m.picture_url }}" > </div>
+    <span class="text">
+
+      <div class="body"  ng-bind-html="secure_cardtext(th.thread.t.info.text)"></div>
+ 
+      <div class="post-meta ">
+        <div class="post-meta d-flex">
+          
+          <div class="photo profile-pic-holder">
+            <span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'fade-sp user-picture'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.thread.u.picture }}" class=""> </span>
+          </div>
+          <div class="meta">
+            <span class="notranslate bold" ng-bind-html="parse_emoji_img(th.thread.u.name)">
+
+            </span>
+            <div class="  inline " 
+              ><!--<span class="" title="{{ th.thread.t.added }}" ng-bind="toDate(th.thread.t.added, th.thread.t.language)"></span> --> <span class="" ng-bind-html="toString('tweets', current_language, th.thread.tweets_count)"> </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </span>
+
+</a>
+
+<div class="nn">
+<a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in th.thread.categories | limitTo:4" ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null"> </a>
+</div>
+</div>
+
+</div>        </div>    
+
+      </div>
+      <div class="">
+        <a ng-if="download_pic" class="   btn btn-primary rounded" href="/pictures#!?tab=most_read&days=7">
+          Read all <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <a ng-if="!download_pic" class="   btn btn-primary rounded" href="/#!?tab=most_read&days=7">
+          Read all <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    
+
+  </div>
+
+  <div ng-if="most_liked.length > 0" class="pt-4 border-bottom pb-4">
+
+      <div class="d-flex justify-content-between mt-4 mb-4">
+        <h3 class=" ">Most Liked</h3>
+        
+      </div>
+      <div class="row welcome mt-2">
+
+        <div class=" mb-3 mb-3 feed1" ng-repeat="(k, th) in most_liked | limitTo:5">
+          <div ng-if="(k!=0 && (k%7) == 0) || k == 2" width="100%" style="width: 100%;">
+    <div google-ad1="" class="googlead1" style="margin-top: 20px;margin-bottom: 20px;"></div>   
+</div>
+
+<div ng-if="(k!=0 && (k%7) == 0) || k == 0" width="100%" style="width: 100%;">
+    <div custom-ad="" class="googlead1" style="margin-bottom: 20px;"></div>   
+</div>
+
+<div class="post-entry-horzontal">
+  <div>
+<a href="/download/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 1">
+
+
+<span class="text">
+<span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'photocustom img-fluid img-fluid1'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.download != null ? th.download.picture_url : '/storage/meta_images/'+th.thread_id+'_2.jpg' }}" class=""> </span>
+
+</span>
+
+</a>
+
+<a href="/thread/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 0">
+
+
+<div class="image " ng-if="th.thread.m != null && th.thread.t.sens != 1" data-animate-effect="fadeIn"
+    afkl-lazy-image-options="{'offset': 400, background: true, 'imgAttrs': [{'class': 'fadein-special box-shadow-img'}, {'onerror' : 'this.style.display=\'none\''}]}"
+    afkl-lazy-image="{{ th.thread.m.picture_url }}" > </div>
+    <span class="text">
+
+      <div class="body"  ng-bind-html="secure_cardtext(th.thread.t.info.text)"></div>
+ 
+      <div class="post-meta ">
+        <div class="post-meta d-flex">
+          
+          <div class="photo profile-pic-holder">
+            <span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'fade-sp user-picture'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.thread.u.picture }}" class=""> </span>
+          </div>
+          <div class="meta">
+            <span class="notranslate bold" ng-bind-html="parse_emoji_img(th.thread.u.name)">
+
+            </span>
+            <div class="  inline " 
+              ><!--<span class="" title="{{ th.thread.t.added }}" ng-bind="toDate(th.thread.t.added, th.thread.t.language)"></span> --> <span class="" ng-bind-html="toString('tweets', current_language, th.thread.tweets_count)"> </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </span>
+
+</a>
+
+<div class="nn">
+<a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in th.thread.categories | limitTo:4" ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null"> </a>
+</div>
+</div>
+
+</div>        </div>
+      
+      </div>
+      <div class="">
+        <a ng-if="!download_pic" class=" btn btn-primary rounded" href="/#!?tab=most_liked&days=7">
+          Read all <i class="fas fa-arrow-right"></i>
+        </a>
+        <a ng-if="download_pic" class=" btn btn-primary rounded" href="/pictures#!?tab=most_liked&days=7">
+          Read all <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    
+  </div>
+
+  <div ng-if="most_requested_week.length > 0" class="pt-4 border-bottom pb-4">
+    <div class="d-flex justify-content-between mt-4 mb-4">
+      <h3 class=" ">Most Requested</h3>
+    </div>
+    <div class="row welcome mb-2">
+      <div class=" mb-3 mb-3  feed1" ng-repeat="(k, th) in most_requested_week   | limitTo:5">
+        <div ng-if="(k!=0 && (k%7) == 0) || k == 2" width="100%" style="width: 100%;">
+    <div google-ad1="" class="googlead1" style="margin-top: 20px;margin-bottom: 20px;"></div>   
+</div>
+
+<div ng-if="(k!=0 && (k%7) == 0) || k == 0" width="100%" style="width: 100%;">
+    <div custom-ad="" class="googlead1" style="margin-bottom: 20px;"></div>   
+</div>
+
+<div class="post-entry-horzontal">
+  <div>
+<a href="/download/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 1">
+
+
+<span class="text">
+<span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'photocustom img-fluid img-fluid1'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.download != null ? th.download.picture_url : '/storage/meta_images/'+th.thread_id+'_2.jpg' }}" class=""> </span>
+
+</span>
+
+</a>
+
+<a href="/thread/{{ th.thread_id }}" class=" blog-entry " ng-class="getDirection(th.thread.t.language)" ng-if="th.thread.type == 0">
+
+
+<div class="image " ng-if="th.thread.m != null && th.thread.t.sens != 1" data-animate-effect="fadeIn"
+    afkl-lazy-image-options="{'offset': 400, background: true, 'imgAttrs': [{'class': 'fadein-special box-shadow-img'}, {'onerror' : 'this.style.display=\'none\''}]}"
+    afkl-lazy-image="{{ th.thread.m.picture_url }}" > </div>
+    <span class="text">
+
+      <div class="body"  ng-bind-html="secure_cardtext(th.thread.t.info.text)"></div>
+ 
+      <div class="post-meta ">
+        <div class="post-meta d-flex">
+          
+          <div class="photo profile-pic-holder">
+            <span afkl-lazy-image-options="{'offset': 100, 'nolazy': true, 'imgAttrs': [{'class': 'fade-sp user-picture'}, {'alt': 'img'}, {'onerror' : 'this.src=\'/img/twt-avatar.png\''}]}"
+              afkl-lazy-image="{{ th.thread.u.picture }}" class=""> </span>
+          </div>
+          <div class="meta">
+            <span class="notranslate bold" ng-bind-html="parse_emoji_img(th.thread.u.name)">
+
+            </span>
+            <div class="  inline " 
+              ><!--<span class="" title="{{ th.thread.t.added }}" ng-bind="toDate(th.thread.t.added, th.thread.t.language)"></span> --> <span class="" ng-bind-html="toString('tweets', current_language, th.thread.tweets_count)"> </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </span>
+
+</a>
+
+<div class="nn">
+<a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in th.thread.categories | limitTo:4" ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null"> </a>
+</div>
+</div>
+
+</div>      </div>
+
+    
+    </div>
+    <div class="">
+      <a ng-if="!download_pic" class="  btn btn-primary rounded" href="/#!?tab=most_requested&days=7">
+        Read all <i class="fas fa-arrow-right"></i>
+      </a>
+      <a ng-if="download_pic" class="  btn btn-primary rounded" href="/pictures#!?tab=most_requested&days=7">
+        Read all <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>    
+
+
+</div>
+
+</div>
+     
+    </div>
+
+  
+
+    <div class="container footer-links col-md-12 col-lg-8" ng-if="!main_loading && !view_loading && !loadmore">
+      <div class="container mx-auto entries p-2">
+  <div class="sidebar-box {{ language == 'ar' ? 'rtl' : 'ltr' }}" ng-if="account != null">
+    <div class="bio text-center">
+      <!--<img src="/img/rattibha.png" alt="Image Placeholder" class="img-fluid main-pic"
+        onerror="arguments[0].currentTarget.style.display='none'"> -->
+      <div class="bio-body">
+        <h5>{{ account.name }}</h5>
+        <p class="small" ng-bind-html="secure_side(account.description)"></p>
+        <div>
+          <a href="https://twitter.com/intent/follow?screen_name={{ account.username }}"
+            class="btn btn-sm btn-primary  rounded" target="__blank">Follow Us </a>
+          {{ counter(account.followers) }}
+
+         <!--  <a target="__blank" class="btn btn-sm btn-primary"
+            href="https://twitter.com/intent/tweet?text=Unroll&in_reply_to=1153068565504888832">Test Now</a> -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>      <div class="f-links  mx-auto text-center ">
+        <div class=" small text-nowrap">
+          <a href="/what-and-how"> What is rattibha? </a> &nbsp;
+        </div>
+        <div class=" small text-nowrap">
+          <a href="/about"> About Us </a> &nbsp;
+        </div>
+        <div class=" small text-nowrap">
+          <a href="/privacy">Privacy Policy </a> &nbsp;
+        </div>
+        <div class=" small text-nowrap">
+          <a href="/terms">Terms&amp;Conditions </a> &nbsp;
+        </div>
+
+      </div>
+    </div>
+
+</div>
+
+</section>
+
+<div class="col-md-12 mx-auto text-center mt-4" ng-cloak>
+  <div class="spinner" ng-if="view_loading || main_loading">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="mt-4 mb-4 p-4"></div>
+
+    <div class="footer notranslate {{ language == 'ar' ? 'rtl' : 'ltr' }} box-shadow-up" ng-cloak>
+      <div class="alert text-center cookiealert" role="alert">
+        We use cookies to ensure you get the best experience on our website.<a href="/privacy" target="_blank">Learn more</a>
+
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">
+          I agree
+        </button>
+        <button type="button" class="btn btn-primary hidden btn-sm declinecookies">
+          I disagree
+        </button>
+      </div>
+
+      <div class="   d-block d-md-none notranslate " ng-cloak>
+        <div class="m-f-header ">
+          <div class="links d-flex justify-content-between" ng-show="!showShareValue">
+            <div class="googletranslate" class="btn" id="google_translate_element"></div>
+            <div class="btn share-btn fas fa-share-alt" ng-click="showShare()" title="Share"></div>
+          </div>
+          <div ng-if="showShareValue && showShareOption" class="links d-flex justify-content-between links-foot ">
+
+            <div class="btn fab  twitter" target="__blank" ng-click="getShare('twitter')">
+            𝕏 &nbsp;
+            </div>
+
+            <div class="btn fab fa-facebook-f facebook" target="__blank" ng-click=" getShare('facebook')">
+              &nbsp;
+            </div>
+            <div class="btn fab fa-whatsapp whatsapp" target="__blank" ng-click="getShare('whatsapp')">
+              &nbsp;
+            </div>
+            <div class="btn fab fa-linkedin linkedin" target="__blank" ng-click=" getShare('linkedin')">
+              &nbsp;
+            </div>
+            <div class="btn share-btn fas fa-times" ng-click="showShare()"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-none d-md-block ">
+
+        <div class="m-f-header d-flex justify-content-between f-btns ">
+
+          <div class="">
+
+            <span class="googletranslate" id="google_translate_element1"></span>
+
+            <a class="fas fa-question btn btn-sm " href="/what-and-how">
+            </a>
+            <a class="fab  btn btn-sm btn-primary rounded " target="__blank" href="https://twitter.com/intent/follow/?screen_name={{ account.username }}">
+            𝕏 Follow Us
+            </a>
+
+          </div>
+
+          <div ng-show="showShareOption" class="links"> Share
+
+            <div class="fab  twitter" target="__blank" ng-click="getShare('twitter')">
+            𝕏&nbsp;
+            </div>
+
+            <div class="fab fa-facebook-f facebook" target="__blank" ng-click="getShare('facebook')">
+              &nbsp;
+            </div>
+            <div class="fab fa-whatsapp whatsapp" target="__blank" ng-click="getShare('whatsapp')">
+              &nbsp;
+            </div>
+            <div class="fab fa-linkedin linkedin" target="__blank" ng-click="getShare('linkedin')">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade {{ screen_mode }}" tabindex="-1" role="dialog" id="my_modal_popup">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <h4 class="modal-title "> Login required </h4>
+            <button type="button " class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+          </div>
+          <div class="modal-body ">
+            <ul>
+              <li>You can see your Thread requests</li>
+              <li>Bookmark your favorite Threads</li>
+              <!--<li>Keep links of PDF downloads</li>-->
+            </ul>
+            <a class="btn btn-primary btn-sm mx-auto" href="/twitter/login" rel="nofollow" target="_self">
+              <i class="fab twitter">
+              </i> &nbsp;Login with 𝕏
+            </a>
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>
+
+  <script type="text/ng-template" id="/temp/p/thread">
+    <div  style="width:100%" width="100%" ng-if="!notfound">
+      <div  google-ad1="" class="googlead1" style="margin-top: 10px;margin-bottom :10px;" style="width:100%"></div>
+</div>
+
+<div class="thread_page" id="thread_page">
+
+  <div class="alert alert-danger col-lg-8 col-md-4 mt-2 mb-2" ng-show="error_msg != null && !thread_loading" ng-cloak>
+    {{ error_msg }}
+  </div>
+
+  <div class="alert alert-warning col-lg-8 col-md-4 mt-2 mb-2" ng-show="alert_msg != null && !thread_loading" ng-cloak>
+    {{ alert_msg }}
+  </div>
+
+
+  <div class="row blog-entries ">
+
+  <div width="100%" class="blog-entries  col-md-10 col-xs-12 mx-auto" style="width: 100%;">
+    <div custom-ad="" class="googlead1 threadpagead" style="margin-top: 10px;margin-bottom: 20px;"></div>   
+  </div>
+
+  <div class="col-xs-10 col-sm-10 col-md-12 col-lg-9 mx-auto  " ng-class="getDirection(current_language)" >
+  <a class="category notranslate " ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in categories | limitTo:4"
+  ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null">
+  </a>
+
+  </div>
+  
+
+    <div class="col-md-12 col-lg-8 main-content border mt-2 mb-2 p-2"
+      ng-show="message != null && message != '' && !thread_loading" ng-cloak>
+      {{ message }}
+    </div>
+
+    <div ng-show="notfound && message == null" class="col-xs-10 col-sm-10 col-md-12 col-lg-12 mx-auto text-center  main-content" style="margin-top: 100px;" >
+      <h2>The thread you are looking for is not found. </h2>
+    </div>
+
+    
+
+    <div class="col-xs-10 col-sm-10 col-md-12 col-lg-9 mx-auto  " id="scrolldiv" ng-show="!notfound && message == null"
+      ng-class="getDirection(current_language)">
+      
+
+      <div class="post-meta p-1 col-md-12 mx-auto mt-1" ng-show="!main_loading && tweet != undefined">
+
+        <span class="author row p-2 ">
+          <div class="d-flex ml-2 align-self-center ">
+            <a ng-href="/{{ tweet.user.username }}">
+            
+           <img ng-src="{{ get_dp_large(tweet.user.picture) }}" alt="" class="mr-2"
+                on-error-src="/img/twt-avatar.png"> 
+            </a>
+          </div>
+
+          <div class="col notranslate align-self-center">
+            <div class=" row ">
+              <a class=" name " href="/{{ tweet.user.username }}" ng-bind-html="parse_emoji_img(tweet.user.name)">
+              </a>
+            </div>
+            <div class="row  ">
+              <a class="ltr-noside " href="https://twitter.com/{{ tweet.user.username }}">
+                <div class="username col p-0 col-sm-4 col-xs-4 ">{{ '@'+tweet.user.username }}</div>
+              </a>
+            </div>
+          </div>
+
+        </span>
+
+        <div class="thread-sub tryu">
+          <div class="sub sec ml-md-0 ml-1">
+            <span ng-bind-html="toString('tweets', current_language, thread.tweets_count)">
+            </span></span>{{ getComma(current_language) }} <span class="mr-2 ltr"
+              ng-bind-html="toDate(tweet.added, current_language)">
+
+          </div>
+          <div class="sec mb-1 notranslate mt-md-0 mt-2 mb-2">
+
+           <!--- <a href="https://twitter.com/intent/follow?user_id={{ thread.user_id }}" class="icon-sp d-none d-md-block "
+              title="Follow on 𝕏">
+              <i class="fas fa-user-plus"></i> <span class="sub"
+                ng-bind-html="toString('follow', current_language)"></span>
+            </a>
+          
+            <a href="https://twitter.com/intent/like?tweet_id={{ thread.thread_id }}" target="_blank" class="icon-sp d-none d-md-block">
+              <i class="fab far fa-heart"></i>
+            </a> -->
+
+            <a target="__blank" class="twitter ltr icon-sp nobreak "
+              href="https://twitter.com/{{ tweet.user.username }}/status/{{ thread.thread_id }}" target="_blank">
+              <i class="fab  twitter"></i> <span class="twitter sub"
+                ng-bind-html="toString('see_on_twitter', current_language)"></span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2" ng-show="!main_loading">
+        <div class="col-md-12 d-flex justify-content-between">
+          <div class="btns-actions ">
+
+            <a id="downloadpdf" download="" target="__blank" style="display:none;"></a>
+
+            <div class="btn btn-sm btn-primary rounded highlight " ng-click="download()">
+              <i class="far fa-file-pdf"> </i> {{ toString('download', current_language) }} PDF
+            </div>
+
+            <div
+              class="btn btn-sm btn-primary rounded highlight {{ bookmarks[thread.thread_id] != 0 ? 'bookmarked' : '' }}"
+              ng-click='bookmark(thread.thread_id)'>
+              <i class="fa fa-check" ng-show="bookmarks[thread.thread_id] != 0"></i>
+              <i class="far fa-bookmark" aria-hidden="true"></i> {{ toString('bookmark', current_language) }}
+            </div>
+
+            <span class=" report-btn flag sm-font nobreak" ng-click="report_thread()"
+              ng-show="show_report_section == false">
+              <span class="fa fa-flag m-1 "></span> {{ toString('report', current_language) }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div ng-show="!main_loading">
+        <div class="d-block d-md-none box-shadow p-2 "
+          ng-class="downloaderror ? 'alert-warning' : downloadsuccess ? 'alert-success' : 'alert-notification'"
+          ng-show="download_loading || downloaderror || downloadsuccess">
+          <i class="fas fa-spinner fa-spin" ng-show="download_loading"></i>
+          {{ downloadmsg }}
+        </div>
+
+        <div class=" col-md-12 col-lg-9 main-content box-shadow mt-2 mb-2 p-2 report-section "
+          ng-show="show_report_section == true && !thread_loading" ng-cloak>
+          <div class="form">
+            <div class="row">
+              <h5 class="col"> Report this thread </h5>
+              <span class="float-right fas fa-window-close p-2" ng-click="hide_report_section()">&nbsp;</span>
+            </div>
+            <div class="checkbox">
+              <label for="cb">
+                <input type="radio" id="cb" name="report_value" ng-model="report_value" value="0">
+                This thread contains inappropriate contents.
+              </label>
+            </div>
+            <!---<div class="checkbox" >
+                   <label for="cb1">
+                     <input type="radio" id="cb1"  name="report_value" ng-model="report_value" value="1">
+                     This user writes inappropriate threads.
+                   </label>
+                 </div> -->
+            <div class="checkbox">
+              <label for="cb2">
+                <input type="radio" id="cb2" name="report_value" ng-model="report_value" ng-model="report_value"
+                  value="2">
+
+                Other
+              </label>
+            </div>
+            <div ng-show="report_value==2">
+              Please describe why do you want to report this thread
+
+              <textarea class="form-control" ng-model="report_description">
+              </textarea>
+            </div>
+
+            <div>
+              <span class="btn btn-primary btn-sm" ng-click="submit_report()"
+                ng-show="report_loading == false">Report</span>
+              <span class="btn btn-primary btn-sm" ng-show="report_loading == true">Reporting...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-none d-md-block box-shadow p-2 "
+          ng-class="downloaderror ? 'alert-warning' : downloadsuccess ? 'alert-success' : 'alert-notification'"
+          ng-show="download_loading || downloaderror || downloadsuccess">
+          <i class="fas fa-spinner fa-spin" ng-show="download_loading"></i>
+          {{ downloadmsg }}
+        </div>
+      </div>
+
+      <!--<div  ng-if="showSlider">
+              <img style="display:none" src="{{ img }}" ng-repeat="img in slideImages" >
+            </div> -->
+
+       
+
+    </div>
+
+
+
+   <div class="col-xs-10 col-sm-10 col-md-12 col-lg-9  main-content" ng-if="!notfound">
+
+      
+      <div class="post-content-body mt-2  ml-1 mr-1" ng-cloak id="thread_images" when-ready="isReady()"
+        wait-for-interpolation="true">
+        <div ng-repeat="(k, th) in tweets" class="mb-4" ng-class="getDirection(th.tweet.language)">
+
+        <div ng-if="(k!=0 && (k%7) == 0) || k == 2">
+            <div google-ad1=""  class="googlead1" style=""></div>
+        </div>
+
+          <div class="tweet mt-2" ng-bind-html='secure(th.tweet, tweet)'> </div>
+
+          <div class=" ccc light-opacity mb-2 " ng-if="th.tweet.media != null && th.tweet.media.length > 0">
+            <div class="img zoom " ng-repeat="med in th.tweet.media">
+
+              <div class="imgload" ng-show="med.type == 2" afkl-lazy-image="{{ med.picture_url }}"
+                afkl-lazy-image-options="{'offset': 600,  'imgAttrs': [{'class': 'img-fluid img-fluid1 fadein-special box-shadow-img afkl-lazy-wrapper'}, {'alt': '{{secure_side(th.tweet.info.text)}}'}, {'onerror': 'arguments[0].currentTarget.style.display=\'none\''}]}"
+                ng-click="showImage()">
+
+              </div>
+
+             
+              <video class="img-fluid box-shadow-img" controls ng-if="med.type == 1" ng-attr-poster="{{med.picture_url}}">
+                <source ng-src="{{ med.video_url }}" type="video/mp4">
+              </video>
+                 
+            </div>
+          </div>
+
+          <div class="row mt-1 mb-1 light-opacity " ng-if="th.tweet.info.retweeted_status_id != null">
+            <div embed-tweet id="{{th.tweet.info.retweeted_status_id}}"
+              class="p-2  in-tweet mx-auto">
+              <div class="ml-4 mr-4" id="{{'loader_'+th.tweet.info.retweeted_status_id}}">
+                <a href="https://twitter.com/i/status/{{th.tweet.info.retweeted_status_id}}"> twitter.com/status... </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-1 mb-1 light-opacity " ng-repeat="url in th.tweet.urls">
+            <div embed-url id="{{url.id}}" url="{{url.url}}" title="{{url.title}}" display="{{url.display_url}}"class="p-2 ml-2 in-tweet mx-auto">
+             <a href="{{url.url}}"> {{ url.url }} </a>    
+            </div>
+           
+          </div>
+        </div>
+
+      </div>     
+
+      <div class="mx-auto " ng-cloak ng-show="(thread_loading || loading) && !main_loading && !view_loading">
+  <div class="row mt-5 mb-5 ">
+    <div class="col-md-12 text-center">
+      <nav aria-label="Page navigation " class="text-center">
+        <div class="spinner show fullscreen mt-4 mb-4">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+
+        </div>
+      </nav>
+      <div class="btn btn-primary mt-4 mb-4 hide" id="loadmore" ng-click="loadMore()"
+        ng-if="loadmore && !loading && !thread_loading">
+        Load more
+      </div>
+    </div>
+  </div>
+</div>
+     <div class="mb-4  pb-4 border-top pt-4" ng-show="!threadUpdate && !thread_loading && !main_loading && !notfound" ng-cloak>
+        Some tweets missing
+
+        <div class="btn btn-primary btn-sm rounded" ng-click="refresh_thread(thread.thread_id)">
+          Refresh the Thread
+          </a>
+        </div>
+      </div>
+
+      <div class="mb-4  pb-4 border-top" ng-show="threadUpdate" ng-cloak>
+        Updating the thread may take while depends on time and number tweets user posted...
+      </div>
+
+      <div class="mb-4  p-3" ng-show="updateMessage != null" ng-cloak>
+        {{ updateMessage }}
+      </div>
+
+    </div>
+
+   
+
+ 
+
+  </div>
+
+  <div class="row blog-entries col-xs-10 col-sm-10 col-md-12 col-lg-9 mx-auto mt-2 mb-2  ">
+  <a class="category notranslate" ng-href="/category/{{ tag.tag.name }}" ng-repeat="tag in categories | limitTo:10"
+          ng-bind="tag.tag[tag_name]" ng-if="tag.tag != null">
+        </a>
+  </div>
+
+</div>
+
+  </script>
+</body>
+<footer>
+    <script src="/rattibha_modules.js?v=13.2"></script>
+ 
+  
+   
+
+  <script type="text/javascript">
+   
+
+    angular.element(document).ready(function() {
+      document.getElementById("intro").style.display = "none";
+      //addCss('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Josefin+Sans&display=swap');   
+
+    //setTimeout(function(){   
+        
+        //loadScript('https://platform.twitter.com/widgets.js');
+            
+        loadScript('https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+        
+      //}, 1000)
+      //loadTranslate();
+     
+    });
+
+
+
+    window.onload = function() {
+      //document.getElementById("intro").style.display = "none"
+    }
+
+    function googleTranslateElementInit() {
+      var params = {includedLanguages: 'en,fr,ar,hi,ta,zh-cn,zh-tw,vi,ur,uk,tr,th,sv,ru,ro,pt,pl,msa,ko,ja,it,id,he,fa,es,de,nl'};
+
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        new google.translate.TranslateElement(params, 'google_translate_element');
+       
+      } else {
+        new google.translate.TranslateElement(params, 'google_translate_element1');
+       
+      }
+    }
+
+    $(".navbar-nav>li>a").on("click", function() {
+      $(".navbar-collapse").collapse("hide");
+    });
+
+    function loadScript(url){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = url;
+            ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( script );
+    }
+
+    function addCss(url){
+      var cssId = 'myCss';  // you could encode the css path itself to generate id..
+      if (!document.getElementById(cssId))
+      {
+          var head  = document.getElementsByTagName('head')[0];
+          var link  = document.createElement('link');
+          link.id   = cssId;
+          link.rel  = 'stylesheet';
+          link.type = 'text/css';
+          link.href = url;
+          link.media = 'all';
+          head.appendChild(link);
+      }
+    }
+  </script>
+
+  </footer>
+
+</html>

@@ -3,6 +3,7 @@
 //     window.location.href = "https://chat.openai.com/";
 // }
 
+
 document.getElementById("but").addEventListener("click",function(){
     window.open ("https://chat.openai.com/","");
 })

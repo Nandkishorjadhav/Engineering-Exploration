@@ -2,144 +2,337 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="./styles/Home.css">
-    <link rel="stylesheet" href="./styles/styleanimation.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./styles/Home.css">
+  <style>
+    /* ---------------- Navbar ---------------- */
+    .navbar {
+      background: #111;
+      color: #fff;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    .logoo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Nav Links Desktop */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #00ffcc;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      border-radius: 3px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #111;
+        width: 220px;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        padding-top: 40px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+    /* Overlay Nav Style */
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(17, 17, 17, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.nav-links.active {
+  transform: translateX(0);
+}
+
+/* Blur effect for page content */
+body.menu-open main,
+body.menu-open .container {
+  filter: blur(6px);
+  transition: filter 0.3s ease;
+}
+
+
+    /* Animate hamburger into X */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  </style>
 </head>
 
 <body>
-    
-    <header>   
+
+  <!-- ✅ Responsive Navbar -->
+  <header>
     <nav class="navbar">
-    <div class="containe">
-        <img src="./assets/Atech.jpeg" alt="">
-      <h1 class="logoo">AincradAI</h1>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="AITools.html">Category</a></li>
-        <li><a href="tech.html">Tech news</a></li>
-        <!-- <li><a href="#">Contact</a></li> -->
-      </ul>
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/Atech.jpeg" alt="Logo">
+          <h1 class="logoo">AincradAI</h1>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="AITools.html">Category</a></li>
+          <li><a href="tech.html">Tech News</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <main>
+    <div class="box">
+      <div class="first">
+        <div class="up-left">
+          <ul>
+            <li>Discover AI tools and Technews</li>
+            <li class="define">All the AI tools mentioned in this website are free to use</li>
+          </ul>
+        </div>
+        <div class="up-right">
+          <img src="./assets/ailogo.png" alt="Ai">
+        </div>
+      </div>
+
+      <div class="second">
+        <h1>Some popular AI tools</h1>
+        <div class="container">
+          <div class="card">
+            <div class="cardhead">
+              <img src="./assets/chatgptlogo.png" alt="">
+              <h2>ChatGPT</h2>
+            </div>
+            <div class="cardcontent">
+              <p class="newsdata">It is an AI chatbot that can process our natural human language and generate a
+                response. </p>
+              <div class="button" id="but">
+                <button>
+                  Visit page <img src="./assets/right.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">
+              <img
+                src="https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-1/367678892_247146688233676_7846728132877464222_n.jpg"
+                alt="">
+              <h2>Leonardo AI</h2>
+            </div>
+            <div class="cardcontent">
+              <p class="newsdata">It allows you to create many images at once and adjust their size and quality. </p>
+              <div class="button" id="butt">
+                <button>
+                  Visit page <img src="./assets/right.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">
+              <img
+                src="https://store-images.s-microsoft.com/image/apps.10279.13b71432-e992-43be-af65-123449130199.19fc4577-aa0a-4a42-b54d-4d75859dc0c8.180d8f25-b896-4e5a-85b4-d66fb3f6d845"
+                alt="">
+              <h2>HeyGen</h2>
+            </div>
+            <div class="cardcontent">
+              <p class="newsdata">It is an innovative platform that makes video creation easy for users at any expertise
+                level. </p>
+              <div class="button" id="buttt">
+                <button>
+                  Visit page <img src="./assets/right.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">
+              <img src="https://cdn.siasat.com/wp-content/uploads/2023/03/Bing.jpg" alt="">
+              <h2>Bing Chat</h2>
+            </div>
+            <div class="cardcontent">
+              <p class="newsdata">It doesn't give answers in a list like a regular search engine but gets its
+                information online </p>
+              <div class="button" id="but">
+                <a href="https://www.bing.com/chat" target="_blank" style="text-decoration: none;">
+                  <button>
+                    Visit page <img src="./assets/right.svg" alt="">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <div class="footleft">
+      <div class="foothead">
+        <div class="footimg">
+          <img src="./assets/Atech.jpeg" alt="">
+        </div>
+        <div class="top">
+          <h1 class="edge">Aincrad AI</h1>
+        </div>
+      </div>
+      <div class="footbottom">
+        <p>FindMyAITool is a website dedicated to providing a comprehensive list of AI tools to assist individuals and
+          businesses in finding the most suitable AI tool for their specific requirements.</p>
+      </div>
     </div>
-  </nav>
-    </header>
-    <main>
-        
-        <div class="box">
-            <div class="first">
-                <div class="up-left">
-                    <ul>
-                        <li>Discover AI tools and Technews</li>
-                        <li class="define">All the AI tools mentioned in this website are free to use</li>
-                       <!-- <li class="egg"><a href="AITools.html" target="_blank"><button class="but">Category <img src="./assets/right.svg" alt=""></button></a>
-                        <a  href="tech.html" target="_blank"><button class="but">Tech news <img src="./assets/right.svg" alt=""></button></a></li> -->
-                       </ul>   
-                </div>
-                <div class="up-right">
-                    <img src="./assets/ailogo.png" alt="Ai">
-                </div>
-                <!-- <div class="rotate">
-                    <img class="logo" src="./assets/final2.png" alt="">
-                </div> -->
-            </div>
-            <div class="second">
-                <h1>Some popular AI tools</h1>
-                <div class="container">
-                    <div class="card">
-                        <div class="cardhead">
-                            <img src="./assets/chatgptlogo.png" alt="">
-                            <h2>ChatGPT</h2>     
-                        </div>
-                        <div class="cardcontent"> 
-                             <p class="newsdata">It is an AI chatbot that can process our natural human language and generate a response. </p>
-                             <div class="button" id="but">
-                                <button  >
-                                    Visit page <img src="./assets/right.svg" alt="">
-                                </button>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardhead">
-                            <img src="https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-1/367678892_247146688233676_7846728132877464222_n.jpg?stp=dst-jpg_p200x200&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=9pLA25bMhRUAb6Q8ij2&_nc_ht=scontent.fnag6-3.fna&oh=00_AfD0zNf3a3laVR8Ow3TM5Flotb9f50Z3LLD60PAcGmzXjA&oe=663438BE" alt="">
-                            <h2>Leonardo AI</h2> 
-                        </div>
-                        <div class="cardcontent">
-                             <p class="newsdata">It allows you to create many images at once and adjust their size and quality. </p>
-                             <div class="button" id="butt">
-                                <button  >
-                                    Visit page <img src="./assets/right.svg" alt="">
-                                </button>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardhead">
-                            <img src="https://store-images.s-microsoft.com/image/apps.10279.13b71432-e992-43be-af65-123449130199.19fc4577-aa0a-4a42-b54d-4d75859dc0c8.180d8f25-b896-4e5a-85b4-d66fb3f6d845" alt="">
-                            <h2>HeyGen</h2>
-                        </div>
-                        <div class="cardcontent"> <p class="newsdata">It is an innovative platform that makes video creation easy for users at any expertise level. </p>
-                             <div class="button" id="buttt">
-                                <button  >
-                                    Visit page <img src="./assets/right.svg" alt="">
-                                </button>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardhead">
-                            <img src="https://cdn.siasat.com/wp-content/uploads/2023/03/Bing.jpg" alt="">
-                            <h2>Bing Chat</h2></div>
-                        <div class="cardcontent"><p class="newsdata">It doesn't give answers in a list like a regular search engine but gets its information online </p>
-                             <div class="button" id="but">
-                                <a href="https://www.bing.com/chat?form=MW00X7&ef_id=_k_CjwKCAjw57exBhAsEiwAaIxaZoqFnAraf6rBPb0ogx4WD507B9FMTNdQZFyBwC9_C1Fpn9H_4ELC1xoC09AQAvD_BwE_k_&OCID=AIDcmmn005jwr7_SEM__k_CjwKCAjw57exBhAsEiwAaIxaZoqFnAraf6rBPb0ogx4WD507B9FMTNdQZFyBwC9_C1Fpn9H_4ELC1xoC09AQAvD_BwE_k_&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZoqFnAraf6rBPb0ogx4WD507B9FMTNdQZFyBwC9_C1Fpn9H_4ELC1xoC09AQAvD_BwE" target="_blank" style="text-decoration: none;"><button  >
-                                    Visit page <img src="./assets/right.svg" alt="">
-                                </button>
-                            </a>
-                             </div>
-                        </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
+
+    <div class="footcenter">
+      <div>
+        <ul>
+          <li>
+            <h2 class="edge">Category</h2>
+          </li>
+          <a href="#" target="_blank">
+            <li>Home</li>
+          </a>
+          <a href="AITools.html">
+            <li>AI Category</li>
+          </a>
+          <a href="tech.html">
+            <li>Tech News</li>
+          </a>
+        </ul>
+      </div>
+      <div class="infonews">
+        <h1 class="edge" id="unique">
+          Technews
+        </h1>
+        <p>The Artificial Intelligence & Equality Initiative is an innovative impact-oriented community of practice
+          seeking to understand the innumerable ways in which AI impacts equality for better or worse.</p>
+      </div>
     </div>
-</div>
-    </main>
-    <footer>
-        <div class="footleft">
-            <div class="foothead">
-                <div class="footimg">
-                    <img src="./assets/Atech.jpeg" alt="">
-                </div>
-                <div class="top">
-                    <h1 class="edge">Aincrad AI</h1>
-                </div>
-            </div>
-            <div class="footbottom">
-                <p>FindMyAITool is a website dedicated to providing a comprehensive list of AI tools to assist individuals and businesses in finding the most suitable AI tool for their specific requirements.</p>
-            </div>
-        </div>
-        <div class="footcenter">
-            <div>
-            <ul >
-                <li><h2 class="edge">Category</h2></li>
-                <a href="#" target="_blank"><li>Home</li></a>
-                <a href="AITools.html" ><li>AI Category</li></a>
-                <a href="tech.html" ><li>Tech News</li></a>
-            </ul>
-        </div>
-            <div class="infonews">
-                <h1 class="edge" id="unique">
-                    Technews
-                </h1>
-                <p>The Artificial Intelligence & Equality Initiative is an innovative impact-oriented community of practice seeking to understand the innumerable ways in which AI impacts equality for better or worse.</p>
-            </div>
-        </div>
-  <img id="red" src="./assets/robo3.png" alt="">
-    </footer>
-    <script src="./js/script.js"></script>
+    <img id="red" src="./assets/robo3.png" alt="">
+  </footer>
+
+  <!-- ✅ JS -->
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open"); // ✅ Blur effect toggle
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  });
+</script>
+
 </body>
 
 </html>

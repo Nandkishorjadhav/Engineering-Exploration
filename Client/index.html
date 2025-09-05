@@ -1,318 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <link rel="stylesheet" href="./styles/Home.css">
-  <style>
-    /* Reset default margins and padding */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-    }
-
-    /* ---------------- Navbar ---------------- */
-    .navbar {
-      background: linear-gradient(to right, #1a1a2e, #16213e); /* Modern gradient */
-      color: #e0e0e0;
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      border: 1px solid #00d4ff; /* Subtle accent border */
-    }
-
-    .logoo {
-      font-size: 24px;
-      font-weight: 600;
-      color: #e0e0e0;
-      letter-spacing: 0.5px;
-    }
-
-    /* Nav Links Desktop */
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #e0e0e0;
-      font-size: 17px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #00d4ff; /* Vibrant accent color */
-    }
-
-    /* Hamburger Button */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 6px;
-      padding: 5px;
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.1); /* Subtle background for contrast */
-    }
-
-    .hamburger span {
-      height: 3px;
-      width: 28px;
-      background: #e0e0e0;
-      border-radius: 4px;
-      transition: all 0.4s ease;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 68px; /* Adjusted for taller navbar */
-        left: 0;
-        background: #1a1a2e; /* Match navbar for consistency */
-        width: 100vw;
-        height: calc(100vh - 68px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 25px;
-        padding: 50px 0 0 0;
-        margin: 0;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-        border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./styles/Home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* General transition for smooth effects */
+      * {
+        transition: all 0.3s ease-in-out;
       }
 
-      .nav-links.active {
-        transform: translateX(0);
+      /* Navbar items hover */
+      nav ul li a {
+        position: relative;
+        display: inline-block;
+        padding: 5px 10px;
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Underline animation on hover */
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 2px;
+        background: #00c3ff;
+        transition: width 0.3s ease-in-out;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* Logo hover */
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        display: inline-block;
+      }
+
+      .logo:hover {
+        color: #00c3ff;
+        transform: scale(1.1) rotate(-2deg);
+        text-shadow: 0px 3px 10px rgba(0, 195, 255, 0.7);
+      }
+
+      /* Mobile menu icon hover */
+      .menu-icon {
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+      }
+
+      .menu-icon:hover {
+        transform: rotate(90deg) scale(1.2);
+        color: #00c3ff;
+      }
+
+      /* About page links */
+      .about-section a {
+        color: #00c3ff;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .about-section a::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #00c3ff;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .about-section a:hover::after {
+        width: 100%;
+      }
+
+      /* Button style hover (if you add buttons later) */
+      button {
+        padding: 10px 20px;
+        border: none;
+        background: #00c3ff;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background: #008bb5;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0px 4px 12px rgba(0, 195, 255, 0.4);
+      }
+
+      /* Reset default margins and padding */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* ---------------- Navbar ---------------- */
+      .navbar {
+        background: linear-gradient(
+          to right,
+          #1a1a2e,
+          #16213e
+        ); /* Modern gradient */
+        color: #e0e0e0;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        border: 1px solid #00d4ff; /* Subtle accent border */
+      }
+
+      .logoo {
+        font-size: 24px;
+        font-weight: 600;
+        color: #e0e0e0;
+        letter-spacing: 0.5px;
+      }
+
+      /* Nav Links Desktop */
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
       }
 
       .nav-links li a {
-        font-size: 20px; /* Larger for touch targets */
-        padding: 10px 20px; /* Better touch area */
+        text-decoration: none;
+        color: #e0e0e0;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: color 0.3s ease;
       }
 
+      .nav-links li a:hover {
+        color: #00d4ff; /* Vibrant accent color */
+      }
+
+      /* Hamburger Button */
       .hamburger {
-        display: flex;
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 6px;
+        padding: 5px;
+        border-radius: 5px;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* Subtle background for contrast */
       }
-    }
 
-    /* Animate hamburger into X */
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
+      .hamburger span {
+        height: 3px;
+        width: 28px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        transition: all 0.4s ease;
+      }
 
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 68px; /* Adjusted for taller navbar */
+          left: 0;
+          background: #1a1a2e; /* Match navbar for consistency */
+          width: 100vw;
+          height: calc(100vh - 68px);
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 25px;
+          padding: 50px 0 0 0;
+          margin: 0;
+          transform: translateX(100%);
+          transition: transform 0.3s ease-in-out;
+          box-sizing: border-box;
+          overflow-x: hidden;
+          box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+          border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+        }
 
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-  </style>
-</head>
+        .nav-links.active {
+          transform: translateX(0);
+        }
 
-<body>
-  <!-- ✅ Responsive Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">
-          <img src="./assets/Atech.jpeg" alt="Logo">
-          <h1 class="logoo">AincradAI</h1>
-        </div>
+        .nav-links li a {
+          font-size: 20px; /* Larger for touch targets */
+          padding: 10px 20px; /* Better touch area */
+        }
 
-        <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        .hamburger {
+          display: flex;
+        }
+      }
 
-        <!-- Nav Links -->
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="AITools.html">Category</a></li>
-          <li><a href="tech.html">Tech News</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+      /* Animate hamburger into X */
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
 
-  <!-- ✅ Main Content -->
-  <main>
-    <div class="box">
-      <div class="first">
-        <div class="up-left">
-          <ul>
-            <li>Discover AI tools and Technews</li>
-            <li class="define">All the AI tools mentioned in this website are free to use</li>
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ Responsive Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="./assets/Atech.jpeg" alt="Logo" />
+            <h1 class="logoo">AincradAI</h1>
+          </div>
+
+          <!-- Hamburger -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Nav Links -->
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="AITools.html">Category</a></li>
+            <li><a href="tech.html">Tech News</a></li>
           </ul>
         </div>
-        <div class="up-right">
-          <img src="./assets/ailogo.png" alt="Ai">
+      </nav>
+    </header>
+
+    <!-- ✅ Main Content -->
+    <main>
+      <div class="box">
+        <div class="first">
+          <div class="up-left">
+            <ul>
+              <li>Discover AI tools and Technews</li>
+              <li class="define">
+                All the AI tools mentioned in this website are free to use
+              </li>
+            </ul>
+          </div>
+          <div class="up-right">
+            <img src="./assets/ailogo.png" alt="Ai" />
+          </div>
         </div>
-      </div>
 
-      <div class="second">
-        <h1>Some popular AI tools</h1>
-        <div class="container">
-          <div class="card">
-            <div class="cardhead">
-              <img src="./assets/chatgptlogo.png" alt="">
-              <h2>ChatGPT</h2>
-            </div>
-            <div class="cardcontent">
-              <p class="newsdata">It is an AI chatbot that can process our natural human language and generate a response.</p>
-              <div class="button" id="but">
-                <button>
-                  Visit page <img src="./assets/right.svg" alt="">
-                </button>
+        <div class="second">
+          <h1>Some popular AI tools</h1>
+          <div class="container">
+            <div class="card">
+              <div class="cardhead">
+                <img src="./assets/chatgptlogo.png" alt="" />
+                <h2>ChatGPT</h2>
               </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="cardhead">
-              <img src="https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-1/367678892_247146688233676_7846728132877464222_n.jpg" alt="">
-              <h2>Leonardo AI</h2>
-            </div>
-            <div class="cardcontent">
-              <p class="newsdata">It allows you to create many images at once and adjust their size and quality.</p>
-              <div class="button" id="butt">
-                <button>
-                  Visit page <img src="./assets/right.svg" alt="">
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="cardhead">
-              <img src="https://store-images.s-microsoft.com/image/apps.10279.13b71432-e992-43be-af65-123449130199.19fc4577-aa0a-4a42-b54d-4d75859dc0c8.180d8f25-b896-4e5a-85b4-d66fb3f6d845" alt="">
-              <h2>HeyGen</h2>
-            </div>
-            <div class="cardcontent">
-              <p class="newsdata">It is an innovative platform that makes video creation easy for users at any expertise level.</p>
-              <div class="button" id="buttt">
-                <button>
-                  Visit page <img src="./assets/right.svg" alt="">
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="cardhead">
-              <img src="https://cdn.siasat.com/wp-content/uploads/2023/03/Bing.jpg" alt="">
-              <h2>Bing Chat</h2>
-            </div>
-            <div class="cardcontent">
-              <p class="newsdata">It doesn't give answers in a list like a regular search engine but gets its information online</p>
-              <div class="button" id="but">
-                <a href="https://www.bing.com/chat" target="_blank" style="text-decoration: none;">
+              <div class="cardcontent">
+                <p class="newsdata">
+                  It is an AI chatbot that can process our natural human
+                  language and generate a response.
+                </p>
+                <div class="button" id="but">
                   <button>
-                    Visit page <img src="./assets/right.svg" alt="">
+                    Visit page <img src="./assets/right.svg" alt="" />
                   </button>
-                </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="cardhead">
+                <img
+                  src="https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-1/367678892_247146688233676_7846728132877464222_n.jpg"
+                  alt=""
+                />
+                <h2>Leonardo AI</h2>
+              </div>
+              <div class="cardcontent">
+                <p class="newsdata">
+                  It allows you to create many images at once and adjust their
+                  size and quality.
+                </p>
+                <div class="button" id="butt">
+                  <button>
+                    Visit page <img src="./assets/right.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="cardhead">
+                <img
+                  src="https://store-images.s-microsoft.com/image/apps.10279.13b71432-e992-43be-af65-123449130199.19fc4577-aa0a-4a42-b54d-4d75859dc0c8.180d8f25-b896-4e5a-85b4-d66fb3f6d845"
+                  alt=""
+                />
+                <h2>HeyGen</h2>
+              </div>
+              <div class="cardcontent">
+                <p class="newsdata">
+                  It is an innovative platform that makes video creation easy
+                  for users at any expertise level.
+                </p>
+                <div class="button" id="buttt">
+                  <button>
+                    Visit page <img src="./assets/right.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="cardhead">
+                <img
+                  src="https://cdn.siasat.com/wp-content/uploads/2023/03/Bing.jpg"
+                  alt=""
+                />
+                <h2>Bing Chat</h2>
+              </div>
+              <div class="cardcontent">
+                <p class="newsdata">
+                  It doesn't give answers in a list like a regular search engine
+                  but gets its information online
+                </p>
+                <div class="button" id="but">
+                  <a
+                    href="https://www.bing.com/chat"
+                    target="_blank"
+                    style="text-decoration: none"
+                  >
+                    <button>
+                      Visit page <img src="./assets/right.svg" alt="" />
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- ✅ Footer -->
-  <!-- ✅ Footer -->
-<footer style="background: #16213e; color: #e0e0e0; padding: 40px 20px 0; font-family: Arial, sans-serif;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+    <!-- ✅ Footer -->
+    <!-- ✅ Footer -->
+    <!-- ✅ Footer -->
+    <footer
+      style="
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 50px 20px 20px;
+        font-family: Arial, sans-serif;
+      "
+    >
+      <div
+        style="
+          max-width: 1200px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+        "
+      >
+        <!-- About -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <img
+              src="./assets/Atech.jpeg"
+              alt="Logo"
+              style="
+                width: 55px;
+                border-radius: 10px;
+                border: 1px solid #38bdf8;
+              "
+            />
+            <h2 style="margin: 0; color: #38bdf8; font-size: 22px">
+              Aincrad AI
+            </h2>
+          </div>
+          <p
+            style="
+              margin-top: 12px;
+              line-height: 1.6;
+              font-size: 15px;
+              color: #94a3b8;
+            "
+          >
+            FindMyAITool is dedicated to providing a curated list of AI tools
+            and tech news to help individuals & businesses choose the right AI
+            solutions.
+          </p>
+        </div>
 
-    <!-- About -->
-    <div style="flex: 1 1 300px; margin-bottom: 20px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="./assets/Atech.jpeg" alt="Logo" style="width: 50px; border-radius: 8px; border: 1px solid #00d4ff;">
-        <h2 style="margin: 0; color: #00d4ff;">Aincrad AI</h2>
+        <!-- Quick Links -->
+        <div>
+          <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 18px">
+            Quick Links
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 10px">
+              <a
+                href="#"
+                style="
+                  color: #e2e8f0;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "
+                >Home</a
+              >
+            </li>
+            <li style="margin-bottom: 10px">
+              <a
+                href="AITools.html"
+                style="
+                  color: #e2e8f0;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "
+                >AI Category</a
+              >
+            </li>
+            <li style="margin-bottom: 10px">
+              <a
+                href="tech.html"
+                style="
+                  color: #e2e8f0;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "
+                >Tech News</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 18px">
+            Follow Us
+          </h3>
+          <div style="display: flex; gap: 18px; font-size: 22px">
+            <a href="#" style="color: #94a3b8; transition: color 0.3s"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" style="color: #94a3b8; transition: color 0.3s"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" style="color: #94a3b8; transition: color 0.3s"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" style="color: #94a3b8; transition: color 0.3s"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
       </div>
-      <p style="margin-top: 10px; line-height: 1.5;">
-        FindMyAITool is a website dedicated to providing a comprehensive list of AI tools to assist individuals and businesses in finding the most suitable AI tool for their specific requirements.
-      </p>
-    </div>
 
-    <!-- Quick Links -->
-    <div style="flex: 1 1 200px; margin-bottom: 20px;">
-      <h3 style="color: #00d4ff;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; margin: 10px 0;">
-        <li><a href="#" style="color: #e0e0e0; text-decoration: none;">Home</a></li>
-        <li><a href="AITools.html" style="color: #e0e0e0; text-decoration: none;">AI Category</a></li>
-        <li><a href="tech.html" style="color: #e0e0e0; text-decoration: none;">Tech News</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Media -->
-    <div style="flex: 1 1 200px; margin-bottom: 20px;">
-      <h3 style="color: #00d4ff;">Follow Us</h3>
-      <div style="display: flex; gap: 15px; margin-top: 10px; font-size: 22px;">
-        <a href="#" style="color: #e0e0e0;"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" style="color: #e0e0e0;"><i class="fab fa-twitter"></i></a>
-        <a href="#" style="color: #e0e0e0;"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" style="color: #e0e0e0;"><i class="fab fa-github"></i></a>
+      <!-- Bottom Bar -->
+      <div
+        style="
+          text-align: center;
+          padding: 15px 0;
+          margin-top: 30px;
+          border-top: 1px solid #1e293b;
+          font-size: 14px;
+          color: #94a3b8;
+        "
+      >
+        © 2025 <span style="color: #38bdf8">Aincrad AI</span> | All Rights
+        Reserved
       </div>
-    </div>
-  </div>
+    </footer>
 
-  <!-- Bottom Bar -->
-  <div style="text-align: center; padding: 15px; margin-top: 20px; border-top: 1px solid #2a2a4a; font-size: 14px;">
-    © 2025 Aincrad AI | All Rights Reserved
-  </div>
-</footer>
+    <!-- Font Awesome for Icons -->
+    <script
+      src="https://kit.fontawesome.com/your-kit-code.js"
+      crossorigin="anonymous"
+    ></script>
 
-<!-- Font Awesome for Icons -->
-<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <!-- ✅ JS -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
 
-  <!-- ✅ JS -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
-  </script>
-</body>
-
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

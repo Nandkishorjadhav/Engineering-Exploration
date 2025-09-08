@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <link rel="stylesheet" href="./styles/Home.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -12,123 +11,31 @@
     <style>
       /* General transition for smooth effects */
       * {
-        transition: all 0.3s ease-in-out;
-      }
-
-      /* Navbar items hover */
-      nav ul li a {
-        position: relative;
-        display: inline-block;
-        padding: 5px 10px;
-        color: white;
-        text-decoration: none;
-      }
-
-      /* Underline animation on hover */
-      nav ul li a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 0%;
-        height: 2px;
-        background: #00c3ff;
-        transition: width 0.3s ease-in-out;
-      }
-
-      nav ul li a:hover::after {
-        width: 100%;
-      }
-
-      /* Logo hover */
-      .logo {
-        font-size: 22px;
-        font-weight: bold;
-        cursor: pointer;
-        color: white;
-        display: inline-block;
-      }
-
-      .logo:hover {
-        color: #00c3ff;
-        transform: scale(1.1) rotate(-2deg);
-        text-shadow: 0px 3px 10px rgba(0, 195, 255, 0.7);
-      }
-
-      /* Mobile menu icon hover */
-      .menu-icon {
-        cursor: pointer;
-        font-size: 28px;
-        color: white;
-      }
-
-      .menu-icon:hover {
-        transform: rotate(90deg) scale(1.2);
-        color: #00c3ff;
-      }
-
-      /* About page links */
-      .about-section a {
-        color: #00c3ff;
-        text-decoration: none;
-        position: relative;
-      }
-
-      .about-section a::after {
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 0%;
-        height: 2px;
-        background: #00c3ff;
-        transition: width 0.3s ease-in-out;
-      }
-
-      .about-section a:hover::after {
-        width: 100%;
-      }
-
-      /* Button style hover (if you add buttons later) */
-      button {
-        padding: 10px 20px;
-        border: none;
-        background: #00c3ff;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-      }
-
-      button:hover {
-        background: #008bb5;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0px 4px 12px rgba(0, 195, 255, 0.4);
-      }
-
-      /* Reset default margins and padding */
-      html,
-      body {
         margin: 0;
         padding: 0;
-        width: 100%;
-        overflow-x: hidden;
+        box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        min-height: 100vh;
+        color: #e2e8f0;
+        line-height: 1.6;
       }
 
       /* ---------------- Navbar ---------------- */
       .navbar {
-        background: linear-gradient(
-          to right,
-          #1a1a2e,
-          #16213e
-        ); /* Modern gradient */
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
         color: #e0e0e0;
         padding: 15px 20px;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(56, 189, 248, 0.2);
       }
 
       .navbar .container {
@@ -143,20 +50,28 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        cursor: pointer;
       }
 
       .logo img {
         width: 42px;
         height: 42px;
         border-radius: 10px;
-        border: 1px solid #00d4ff; /* Subtle accent border */
+        border: 2px solid #38bdf8;
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
       }
 
       .logoo {
         font-size: 24px;
-        font-weight: 600;
-        color: #e0e0e0;
-        letter-spacing: 0.5px;
+        font-weight: 700;
+        color: #38bdf8;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      }
+
+      .logo:hover .logoo {
+        transform: scale(1.05);
+        color: #0ea5e9;
       }
 
       /* Nav Links Desktop */
@@ -171,12 +86,33 @@
         color: #e0e0e0;
         font-size: 17px;
         font-weight: 500;
-        letter-spacing: 0.3px;
-        transition: color 0.3s ease;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links li a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+        transition: width 0.3s ease;
       }
 
       .nav-links li a:hover {
-        color: #00d4ff; /* Vibrant accent color */
+        color: #38bdf8;
+        background: rgba(56, 189, 248, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .nav-links li a:hover::before {
+        width: 80%;
       }
 
       /* Hamburger Button */
@@ -185,20 +121,16 @@
         flex-direction: column;
         cursor: pointer;
         gap: 6px;
-        padding: 5px;
-        border-radius: 5px;
-        background: rgba(
-          255,
-          255,
-          255,
-          0.1
-        ); /* Subtle background for contrast */
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.3);
       }
 
       .hamburger span {
         height: 3px;
         width: 28px;
-        background: #e0e0e0;
+        background: #38bdf8;
         border-radius: 4px;
         transition: all 0.4s ease;
       }
@@ -207,9 +139,10 @@
       @media (max-width: 768px) {
         .nav-links {
           position: fixed;
-          top: 68px; /* Adjusted for taller navbar */
+          top: 68px;
           left: 0;
-          background: #1a1a2e; /* Match navbar for consistency */
+          background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+          backdrop-filter: blur(20px);
           width: 100vw;
           height: calc(100vh - 68px);
           flex-direction: column;
@@ -220,10 +153,7 @@
           margin: 0;
           transform: translateX(100%);
           transition: transform 0.3s ease-in-out;
-          box-sizing: border-box;
-          overflow-x: hidden;
-          box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-          border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+          border-left: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .nav-links.active {
@@ -231,8 +161,11 @@
         }
 
         .nav-links li a {
-          font-size: 20px; /* Larger for touch targets */
-          padding: 10px 20px; /* Better touch area */
+          font-size: 20px;
+          padding: 15px 30px;
+          width: 200px;
+          text-align: center;
+          border-radius: 12px;
         }
 
         .hamburger {
@@ -240,7 +173,6 @@
         }
       }
 
-      /* Animate hamburger into X */
       .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
       }
@@ -251,6 +183,360 @@
 
       .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      /* ---------------- Main Content ---------------- */
+      main {
+        min-height: calc(100vh - 200px);
+      }
+
+      .box {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Hero Section */
+      .first {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 80px 0;
+        min-height: 70vh;
+      }
+
+      .up-left {
+        padding: 40px;
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .up-left::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(14, 165, 233, 0.05));
+        z-index: -1;
+      }
+
+      .up-left ul {
+        list-style: none;
+      }
+
+      .up-left ul li:first-child {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #38bdf8;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .define {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        font-weight: 400;
+        padding: 20px;
+        background: rgba(15, 23, 42, 0.7);
+        border-radius: 12px;
+        border-left: 4px solid #38bdf8;
+        margin-top: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .up-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .up-right img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(56, 189, 248, 0.3));
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .up-right img:hover {
+        transform: scale(1.05) rotate(2deg);
+        filter: drop-shadow(0 30px 60px rgba(56, 189, 248, 0.5));
+      }
+
+      /* AI Tools Section */
+      .second {
+        padding: 60px 0 80px;
+      }
+
+      .second h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #38bdf8;
+        font-weight: 700;
+        text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+      }
+
+      .card {
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(45deg, #38bdf8, #0ea5e9, #06b6d4);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 30px 70px rgba(56, 189, 248, 0.2);
+        border-color: rgba(56, 189, 248, 0.5);
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .cardhead {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 25px;
+        background: rgba(15, 23, 42, 0.7);
+      }
+
+      .cardhead img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        border: 2px solid rgba(56, 189, 248, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .cardhead h2 {
+        color: #e2e8f0;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .cardcontent {
+        padding: 25px;
+      }
+
+      .newsdata {
+        color: #cbd5e1;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .button {
+        margin-top: 20px;
+      }
+
+      .button button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
+        width: 100%;
+        justify-content: center;
+      }
+
+      .button button:hover {
+        background: linear-gradient(45deg, #0ea5e9, #0284c7);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+      }
+
+      .button a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+
+      .button img {
+        width: 16px;
+        height: 16px;
+        filter: brightness(0) invert(1);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #e2e8f0;
+        padding: 60px 20px 30px;
+        border-top: 1px solid rgba(56, 189, 248, 0.2);
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-section h2,
+      .footer-section h3 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .footer-section p {
+        line-height: 1.8;
+        color: #94a3b8;
+        font-size: 15px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section ul li a {
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 5px 0;
+        display: inline-block;
+      }
+
+      .footer-section ul li a:hover {
+        color: #38bdf8;
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+      }
+
+      .social-links a {
+        color: #94a3b8;
+        transition: all 0.3s ease;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(56, 189, 248, 0.1);
+      }
+
+      .social-links a:hover {
+        color: #38bdf8;
+        background: rgba(56, 189, 248, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        border-top: 1px solid rgba(30, 41, 59, 0.8);
+        font-size: 14px;
+        color: #94a3b8;
+      }
+
+      .footer-bottom span {
+        color: #38bdf8;
+        font-weight: 600;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .first {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding: 40px 0;
+          text-align: center;
+        }
+
+        .up-left ul li:first-child {
+          font-size: 2rem;
+        }
+
+        .define {
+          font-size: 1rem;
+        }
+
+        .second h1 {
+          font-size: 2rem;
+        }
+
+        .container {
+          grid-template-columns: 1fr;
+          padding: 0;
+        }
+
+        .card {
+          margin: 0 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .up-left ul li:first-child {
+          font-size: 1.8rem;
+        }
+
+        .define {
+          font-size: 0.9rem;
+          padding: 15px;
+        }
+
+        .cardhead {
+          padding: 20px;
+        }
+
+        .cardcontent {
+          padding: 20px;
+        }
       }
     </style>
   </head>
@@ -288,33 +574,32 @@
         <div class="first">
           <div class="up-left">
             <ul>
-              <li>Discover AI tools and Technews</li>
+              <li>Discover AI Tools & Tech News</li>
               <li class="define">
-                All the AI tools mentioned in this website are free to use
+                🚀 All the AI tools mentioned on this website are free to use and carefully curated for maximum productivity
               </li>
             </ul>
           </div>
           <div class="up-right">
-            <img src="./assets/ailogo.png" alt="Ai" />
+            <img src="./assets/ailogo.png" alt="AI Technology" />
           </div>
         </div>
 
         <div class="second">
-          <h1>Some popular AI tools</h1>
+          <h1>Popular AI Tools</h1>
           <div class="container">
             <div class="card">
               <div class="cardhead">
-                <img src="./assets/chatgptlogo.png" alt="" />
+                <img src="./assets/chatgptlogo.png" alt="ChatGPT Logo" />
                 <h2>ChatGPT</h2>
               </div>
               <div class="cardcontent">
                 <p class="newsdata">
-                  It is an AI chatbot that can process our natural human
-                  language and generate a response.
+                  An advanced AI chatbot that processes natural human language and generates intelligent, contextual responses for various tasks.
                 </p>
                 <div class="button" id="but">
                   <button>
-                    Visit page <img src="./assets/right.svg" alt="" />
+                    Visit Tool <img src="./assets/right.svg" alt="Arrow" />
                   </button>
                 </div>
               </div>
@@ -322,20 +607,16 @@
 
             <div class="card">
               <div class="cardhead">
-                <img
-                  src="https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-1/367678892_247146688233676_7846728132877464222_n.jpg"
-                  alt=""
-                />
+                <img src="./assets/Leonardo.jpg" alt="Leonardo AI Logo" />
                 <h2>Leonardo AI</h2>
               </div>
               <div class="cardcontent">
                 <p class="newsdata">
-                  It allows you to create many images at once and adjust their
-                  size and quality.
+                  Create stunning, high-quality images at scale with advanced AI technology. Customize size, style, and quality with ease.
                 </p>
                 <div class="button" id="butt">
                   <button>
-                    Visit page <img src="./assets/right.svg" alt="" />
+                    Visit Tool <img src="./assets/right.svg" alt="Arrow" />
                   </button>
                 </div>
               </div>
@@ -345,18 +626,17 @@
               <div class="cardhead">
                 <img
                   src="https://store-images.s-microsoft.com/image/apps.10279.13b71432-e992-43be-af65-123449130199.19fc4577-aa0a-4a42-b54d-4d75859dc0c8.180d8f25-b896-4e5a-85b4-d66fb3f6d845"
-                  alt=""
+                  alt="HeyGen Logo"
                 />
                 <h2>HeyGen</h2>
               </div>
               <div class="cardcontent">
                 <p class="newsdata">
-                  It is an innovative platform that makes video creation easy
-                  for users at any expertise level.
+                  Revolutionary platform that democratizes video creation, making professional-quality content accessible to everyone.
                 </p>
                 <div class="button" id="buttt">
                   <button>
-                    Visit page <img src="./assets/right.svg" alt="" />
+                    Visit Tool <img src="./assets/right.svg" alt="Arrow" />
                   </button>
                 </div>
               </div>
@@ -366,23 +646,18 @@
               <div class="cardhead">
                 <img
                   src="https://cdn.siasat.com/wp-content/uploads/2023/03/Bing.jpg"
-                  alt=""
+                  alt="Bing Chat Logo"
                 />
                 <h2>Bing Chat</h2>
               </div>
               <div class="cardcontent">
                 <p class="newsdata">
-                  It doesn't give answers in a list like a regular search engine
-                  but gets its information online
+                  Experience conversational AI search that provides comprehensive, real-time answers instead of traditional search results.
                 </p>
-                <div class="button" id="but">
-                  <a
-                    href="https://www.bing.com/chat"
-                    target="_blank"
-                    style="text-decoration: none"
-                  >
+                <div class="button">
+                  <a href="https://www.bing.com/chat" target="_blank">
                     <button>
-                      Visit page <img src="./assets/right.svg" alt="" />
+                      Visit Tool <img src="./assets/right.svg" alt="Arrow" />
                     </button>
                   </a>
                 </div>
@@ -393,143 +668,57 @@
       </div>
     </main>
 
-    <!-- ✅ Footer -->
-    <!-- ✅ Footer -->
-    <!-- ✅ Footer -->
-    <footer
-      style="
-        background: #0f172a;
-        color: #e2e8f0;
-        padding: 50px 20px 20px;
-        font-family: Arial, sans-serif;
-      "
-    >
-      <div
-        style="
-          max-width: 1200px;
-          margin: auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 30px;
-        "
-      >
+    <!-- ✅ Enhanced Footer -->
+    <footer>
+      <div class="footer-content">
         <!-- About -->
-        <div>
-          <div style="display: flex; align-items: center; gap: 12px">
+        <div class="footer-section">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
             <img
               src="./assets/Atech.jpeg"
               alt="Logo"
-              style="
-                width: 55px;
-                border-radius: 10px;
-                border: 1px solid #38bdf8;
-              "
+              style="width: 55px; border-radius: 12px; border: 2px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);"
             />
-            <h2 style="margin: 0; color: #38bdf8; font-size: 22px">
-              Aincrad AI
+            <h2 style="margin: 0; color: #38bdf8; font-size: 24px; font-weight: 700;">
+              AincradAI
             </h2>
           </div>
-          <p
-            style="
-              margin-top: 12px;
-              line-height: 1.6;
-              font-size: 15px;
-              color: #94a3b8;
-            "
-          >
-            FindMyAITool is dedicated to providing a curated list of AI tools
-            and tech news to help individuals & businesses choose the right AI
-            solutions.
+          <p>
+            Your ultimate destination for discovering cutting-edge AI tools and staying updated with the latest tech innovations. We curate the best free AI solutions to boost your productivity.
           </p>
         </div>
 
         <!-- Quick Links -->
-        <div>
-          <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 18px">
-            Quick Links
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 10px">
-              <a
-                href="#"
-                style="
-                  color: #e2e8f0;
-                  text-decoration: none;
-                  transition: color 0.3s;
-                "
-                >Home</a
-              >
-            </li>
-            <li style="margin-bottom: 10px">
-              <a
-                href="AITools.html"
-                style="
-                  color: #e2e8f0;
-                  text-decoration: none;
-                  transition: color 0.3s;
-                "
-                >AI Category</a
-              >
-            </li>
-            <li style="margin-bottom: 10px">
-              <a
-                href="tech.html"
-                style="
-                  color: #e2e8f0;
-                  text-decoration: none;
-                  transition: color 0.3s;
-                "
-                >Tech News</a
-              >
-            </li>
+        <div class="footer-section">
+          <h3>Quick Navigation</h3>
+          <ul>
+            <li><a href="#">🏠 Home</a></li>
+            <li><a href="AITools.html">🤖 AI Categories</a></li>
+            <li><a href="tech.html">📰 Tech News</a></li>
           </ul>
         </div>
 
         <!-- Social Media -->
-        <div>
-          <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 18px">
-            Follow Us
-          </h3>
-          <div style="display: flex; gap: 18px; font-size: 22px">
-            <!-- <a href="#" style="color: #94a3b8; transition: color 0.3s"
-              ><i class="fab fa-facebook-f"></i
-            ></a> -->
-            <a href="#" style="color: #94a3b8; transition: color 0.3s"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/nandkishor-jadhav-80044b300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: #94a3b8; transition: color 0.3s"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="https://github.com/Nandkishorjadhav" style="color: #94a3b8; transition: color 0.3s"
-              ><i class="fab fa-github"></i
-            ></a>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nandkishor-jadhav-80044b300" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Nandkishorjadhav" title="GitHub"><i class="fab fa-github"></i></a>
           </div>
+          <p style="margin-top: 20px; font-size: 14px;">
+            Follow us for the latest updates on AI tools and technology trends!
+          </p>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div
-        style="
-          text-align: center;
-          padding: 15px 0;
-          margin-top: 30px;
-          border-top: 1px solid #1e293b;
-          font-size: 14px;
-          color: #94a3b8;
-        "
-      >
-        © 2025 <span style="color: #38bdf8">Aincrad AI</span> | All Rights
-        Reserved
+      <div class="footer-bottom">
+        © 2025 <span>AincradAI</span> | Empowering Innovation Through AI | All Rights Reserved
       </div>
     </footer>
 
-    <!-- Font Awesome for Icons -->
-    <script
-      src="https://kit.fontawesome.com/your-kit-code.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- ✅ JS -->
+    <!-- ✅ JavaScript -->
     <script>
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("nav-links");
@@ -537,6 +726,47 @@
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navLinks.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+        } else {
+          navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+        }
+      });
+
+      // Add loading animation for cards
+      const cards = document.querySelectorAll('.card');
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
       });
     </script>
   </body>

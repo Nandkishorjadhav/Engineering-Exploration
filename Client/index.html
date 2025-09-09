@@ -728,13 +728,80 @@
         navLinks.classList.toggle("active");
       });
 
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll('.nav-links a').forEach(link => {
+      // Enhanced mobile menu animations
+      document.querySelectorAll('.nav-links a').forEach((link, index) => {
         link.addEventListener('click', () => {
           hamburger.classList.remove("active");
           navLinks.classList.remove("active");
+          
+          // Add click ripple effect
+          const ripple = document.createElement('span');
+          ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+          `;
+          
+          const rect = link.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = '50%';
+          ripple.style.top = '50%';
+          ripple.style.marginLeft = -size / 2 + 'px';
+          ripple.style.marginTop = -size / 2 + 'px';
+          
+          link.style.position = 'relative';
+          link.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
         });
       });
+
+      // Close menu when clicking overlay
+      navLinks.addEventListener('click', (e) => {
+        if (e.target === navLinks) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+        
+        @keyframes slideInFromRight {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .nav-links.active li {
+            animation: slideInFromRight 0.5s ease forwards;
+          }
+          
+          .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+          .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
+          .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
+        }
+      `;
+      document.head.appendChild(style);
 
       // Add scroll effect to navbar
       window.addEventListener('scroll', () => {
